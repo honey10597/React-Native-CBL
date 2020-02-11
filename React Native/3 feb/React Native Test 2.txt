@@ -1,0 +1,72 @@
+import React,{Component} from 'react';
+import { Text,TextInput,ScrollView, View,Image,Button,StyleSheet,TouchableOpacity } from 'react-native';
+import Constants from 'expo-constants';
+
+// You can import from local files
+import AssetExample from './components/AssetExample';
+
+// or any pure javascript modules available in npm
+import { Card } from 'react-native-paper';
+
+export default class App extends React.Component {
+  constructor(props){
+    super(props);
+      this.state={
+        name:'abc',
+        email:'abc@gmail.com',
+        title:'Title',
+        temp:''
+      }
+  }
+
+change=()=>{
+  const{temp}=this.state;
+  this.setState({
+    title:temp
+  });
+}
+
+  render() {
+    
+    return (
+      <ScrollView style={{backgroundColor:'#eeffcc'}}>
+      <View >
+
+          <View style={{backgroundColor:'orange',height:56,flexDirection:'row'}}>
+           <Image style={{width:30,height:30,position:'fixed',top:10,left:10}} source={require                        ('@expo/snack-static/react-native-logo.png')}/>
+            <Text style={{textAlign:'center',margin:'auto',fontSize:20}}>{this.state.title}</Text>
+            <Image style={{width:30,height:30,position:'fixed',top:10,right:10}} source={require                      ('@expo/snack-static/react-native-logo.png')}/>
+          </View>
+
+          <View style={{backgroundColor:'#ddff99',height:200,flexDirection:'row'}}>
+              <Image source = {{uri:'https://specials-images.forbesimg.com/imageserve/5de530f6ea103f000653df8e/960x0.jpg?fit=scale'}}
+   style = {{ width:"100%", height: 200,position:'absolute' }} />
+             <Image style={{width:30,height:30,top:0,left:0,position:'absolute'}} source=                                 {require ('@expo/snack-static/react-native-logo.png')}/>
+             <Image style={{width:30,height:30,top:0,right:0,position:'absolute'}} source=                            {require ('@expo/snack-static/react-native-logo.png')}/>
+             <Image style={{width:30,height:30,bottom:0,right:0,position:'absolute'}}                           source= {require ('@expo/snack-static/react-native-logo.png')}/>
+             <Image style={{width:30,height:30,bottom:0,left:0,position:'absolute'}} source=                          {require ('@expo/snack-static/react-native-logo.png')}/>
+          </View>
+
+        <View >
+            <Text style={{marginLeft:10,marginTop:10}}>Name-{this.state.name}</Text>
+            <Text style={{marginLeft:10,marginTop:10}}>Email-{this.state.email}</Text>
+            <TextInput style={{margin:'auto',marginTop:20,borderWidth:2,borderColor:'black'}}
+               underlineColorAndroid = "transparent"
+               placeholder = "Change Title"
+               placeholderTextColor = "#9a73ef"
+
+              onChangeText={find=>this.setState({temp: find})}
+               />
+        </View>
+
+        <TouchableOpacity style={{borderRadius:'50%',backgroundColor:'red',height:50,width:50,margin:'auto',top:10}} onPress={this.change} >
+          <Image style={{width:20,height:20,alignItems:'center',margin:'auto'}}                    source=  {require ('@expo/snack-static/react-native-logo.png')}/> 
+        </TouchableOpacity>
+
+        <Image style={{width:69,height:69,bottom:0,left:0,position:'fixed'}} source=                          {require ('@expo/snack-static/react-native-logo.png')}/>
+
+      </View>
+      </ScrollView>
+    );
+  }
+}

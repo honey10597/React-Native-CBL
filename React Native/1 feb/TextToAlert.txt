@@ -1,0 +1,33 @@
+import * as React from 'react';
+import { AppRegistry,Text,TextInput,ScrollView, View,Image,Button,StyleSheet,TouchableOpacity,Alert,Touchable,Opacity } from 'react-native';
+import Constants from 'expo-constants';
+
+
+export default class App extends React.Component{
+  constructor(){
+    super();
+    state={
+      name:'Honey'
+    }} 
+    text=()=>{
+      alert(this.state.name)
+    }
+  render(){
+    return(
+    <ScrollView>
+      <View style={{flex:1,flexDirection:'column',justifyContent:'space-between',top:40,padding:10}}>
+        <View style={{backgroundColor:'white'}}>
+            <Text style={{fontSize:30}}>Name</Text></View>
+        <View>
+        <TextInput style={{height:40,backgroundColor:'azure',marginTop:'10%',borderolor:'black',fontSize:20,borderWidth:2,borderColor:'black'}}
+              onChangeText={text=>this.setState({name:text})}
+            />
+        </View>
+      </View>
+      <TouchableOpacity style={{marginTop:'30%',backgroundColor:'red',borderRadius:50,margin:16}} onPress={this.text}>
+          <Text style={{textAlign:'center',fontSize:20,color:'white',margin:5}}>Show</Text>
+      </TouchableOpacity>
+    </ScrollView>
+    );
+  }
+}

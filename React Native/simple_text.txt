@@ -1,0 +1,17 @@
+import React,{componenet} from 'react'
+import { Text, View, StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
+
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <View style={{flex:1,backgroundColor:'yellow',alignItems:'center',justifyContent:'center'}}>
+        <Text style={{color:'red',size:'45px'}}>
+            This is under Text Tag.
+        </Text>
+      </View>
+    );
+  }
+}
+

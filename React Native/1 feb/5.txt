@@ -1,0 +1,60 @@
+import * as React from 'react';
+import { Text,TextInput,ScrollView, View,Image,Button,StyleSheet,TouchableOpacity } from 'react-native';
+import Constants from 'expo-constants';
+
+
+export default class App extends React.Component{
+ 
+ state = {  
+        comments: '0',  
+        likes:'0'
+    }  
+
+    componentDidMount(){
+      this.setState({
+        comments:'10',
+        likes:'20'
+      })
+    }
+
+  render(){
+    return(
+      <ScrollView>
+        <View style={{justifyContent:'center',flex:1}}>
+          <View style={{backgroundColor:'orange'}}>
+            <Text style={{fontSize:25}}>Title</Text>
+          </View>
+          <View style={{height:300,width:'100%',backgroundColor:'white',flexDirection:'column'}}>
+              <Image source = {{uri:'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png'}}
+   style = {{ width:300, height: 300,position:'absolute',right:'10%'}}
+   />
+              <Image source={require('@expo/snack-static/react-native-logo.png')}
+   style = {{ width:30,height:30,top:0,position:'absolute',right:0}}
+/>
+          </View>
+        </View>
+       <View >
+        
+        <View style={{flexDirection:'row'}}>
+             <Text onPress={this.componentDidMount}>Likes {this.state.likes} </Text>  
+             <Text onPress={this.componentDidMount}>Comments {this.state.comments}</Text>
+        </View>
+
+      <View style={{flexDirection:'row',top:-20,justifyContent:'flex-end'}}>
+        <Image source = {{uri:'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png'}}
+   style = {{width:30,height:30,right:0}}
+/>
+
+<Image source={require('@expo/snack-static/react-native-logo.png')}
+   style = {{ width:30,height:30}}
+/>
+
+<Image source = {{uri:'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png'}}
+   style = {{ width:30,height:30}}
+/>
+    </View>
+  </View>
+      </ScrollView>
+    )
+  }
+}

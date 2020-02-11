@@ -1,0 +1,121 @@
+import * as React from 'react';
+import { Text, View, StyleSheet,TextInput,TouchableOpacity,Image,Linking,ScrollView,componentDidMount} from  'react-native';
+import Constants from 'expo-constants';
+
+// You can import from local files
+import AssetExample from './components/AssetExample';
+
+// or any pure javascript modules available in npm
+import { Card } from 'react-native-paper';
+
+export default class App extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      name: '',
+      email: '',
+      password:''
+    }
+  }
+ 
+  
+  Check = () => {
+    
+    if(this.state.name=='')
+    {
+      alert('Enter name');
+    }else if(this.state.email == '')
+    {
+      alert('Enter email');
+    }else if(this.state.password =='')
+    {
+      alert('password required');
+    }else{
+      alert('Name: '+this.state.name+"\n"+'Email: '+this.state.email+"\n"+'Password: '+this.state.password);
+    }
+
+  };
+
+  render() {
+    return (
+      <ScrollView>
+      <View>
+        
+         <View style={{flexDirection:'row'}}>
+          <Image source={require('/insta_cam.png')}
+          style={{height:50,width:50}}
+          />
+          <Text style={{fontSize:25,fontStyle:'italic',margin:'auto',fontFamily:'Billabong',justifyContent:'center'}}>Sign Up</Text>
+        </View>
+        
+         <View
+              style={{
+                borderBottomColor: 'black',
+                borderBottomWidth: 1,
+                top:5
+              }}
+            >
+        </View>
+
+        <View style={{top:5,flexDirection:'column'}}>
+            <View>
+            <Image source={require('/geometric_bg.jpg')}
+                style={{height:500,width:"100%",position:'fixed'}}
+                />
+            </View>
+          <View style={{marginTop:40}}>
+          <Image source={require('/ins.png')}
+                style={{height:100,width:100,alignSelf:'center'}}
+                />
+          <View>
+              <Text style={{marginTop:40,marginLeft:50,fontSize:20}}>Name</Text>
+              <TextInput style={{margin:'auto',borderWidth:2,borderColor:'black'}}
+                  placeholder = "Name"
+                  placeholderTextColor = "#9a73ef"
+                  onChangeText={name => this.setState({ name })}
+                  />
+          </View>
+          <View>
+              <Text style={{marginLeft:50,fontSize:20}}>Email</Text>
+              <TextInput style={{margin:'auto',borderWidth:2,borderColor:'black'}}
+                  placeholder = "Email"
+                  keyboardType="email-address"
+                  placeholderTextColor = "#9a73ef"
+                  onChangeText={email => this.setState({ email })}
+                  />
+          </View>
+          <View>
+              <Text style={{marginLeft:50,fontSize:20}}>Password</Text>
+              <TextInput style={{margin:'auto',borderWidth:2,borderColor:'black'}}
+                  placeholder = "Password"
+                  placeholderTextColor = "#9a73ef"
+                  secureTextEntry="true"
+                  onChangeText={password =>this.setState({password})}
+                  />
+          </View>
+          <TouchableOpacity style={{width:'50%',marginTop:10,alignSelf:'center',marginBottom:10}}  onPress={this.Check}>
+                  <Text style={{fontSize:15,color:'white',padding:5,backgroundColor:'#990000',borderRadius:5,textAlign:'center'}}>Sign Up</Text>
+              </TouchableOpacity>
+              
+             
+
+       </View>
+        <View style={{flexDirection:'row',alignSelf:'center'}}>
+              <Text style={{fontSize:12,color:'#000000',fontWeight:'bold'}}>I Agree to </Text>
+            <TouchableOpacity style={{}}  >
+                  <Text style={{fontSize:12,color:'#000000',fontWeight:'bold'}}>terms & conditions </Text>
+              </TouchableOpacity>
+
+                <Text style={{fontSize:12,color:'#000000',fontWeight:'bold'}}>and </Text>
+
+                <TouchableOpacity style={{}}  >
+                  <Text style={{fontSize:12,color:'#000000',fontWeight:'bold'}}> privacy policy</Text>
+              </TouchableOpacity>
+
+              </View>
+      </View>
+      </View>
+    </ScrollView>
+    );
+  }
+}

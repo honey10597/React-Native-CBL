@@ -1,0 +1,46 @@
+import * as React from 'react';
+import { Text,TextInput,ScrollView, View,Image,Button,StyleSheet,TouchableOpacity } from 'react-native';
+import Constants from 'expo-constants';
+
+
+export default class App extends React.Component{
+  render(){
+    return(
+      <ScrollView>
+    <View style={{backgroundColor:'white',flex:1}}>
+      <View style={{backgroundColor:'#e6e600',flexDirection:'row',justifyContent:'center'}}>
+        <Text style={{fontSize:35,fontWeight:'bold',alignItems:'center'}}>Title</Text>
+      </View>
+      <View style={{backgroundColor:'#ffb366',flexDirection:'row',padding:10,justifyContent:'space-between'}}>
+        <Image style={{width:100,height:100,borderRadius:'50%'}} source={require('@expo/snack-static/react-native-logo.png')}/>
+        <View style={{marginTop:35,right:20,height:50,width:100}}>
+         <Button
+         title = "Change"
+         color = "red"
+      />
+      </View>
+      </View>
+      <View style={{marginTop:30,flexDirection:'column',marginLeft:16,marginRight:16}}>
+        <View ><Button
+         title = "Settings"
+         color = "red"
+      /></View>
+      
+      <View style={{marginTop:20}}><Button
+         title = "Contact US"
+         color = "red"
+      /></View>
+      <View style={{marginTop:20}}><Button
+         title = "LogOut"
+         color = "red"
+      /></View>
+      </View>
+      <TouchableOpacity style={{marginTop:20,backgroundColor:'red',borderRadius:50,margin:16}}>
+          <Text style={{textAlign:'center',fontSize:20,color:'white',margin:5}}>EXIT</Text>
+      </TouchableOpacity>
+
+    </View>
+    </ScrollView>
+    )
+  }
+}

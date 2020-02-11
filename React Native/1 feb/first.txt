@@ -1,0 +1,40 @@
+
+import React,{Component} from 'react';
+import {TextInput,Text,View,Image,Button} from 'react-native';
+
+export default class first extends React.Component{
+
+  render(){
+   return(
+    <View style={{backgroundColor:'white',flex:1}}>
+       
+       <View style={{backgroundColor:'#e6e600',flexDirection:'row',justifyContent:'space-between',paddingHorizontal:20}}>
+         <Image style={{width:50,height:50}} source={require ('@expo/snack-static/react-native-logo.png')}/>
+         <Text>React Native</Text>
+         <Image style={{width:50,height:50}} source={require('@expo/snack-static/react-native-logo.png')}/>
+       </View>
+
+       <View style={{backgroundColor:'#ffb366',flexDirection:'row',justifyContent:'center'}}>
+          <Image style={{width:100,height:100,borderRadius:'50%'}} source={require('@expo/snack-static/react-native-logo.png')}/>
+       </View>
+
+      <View style={{backgroundColor:'#ffbb99',flexDirection:'row',justifyContent:'space-between',padding:20}}>
+        <Text style={{backgroundColor:'#80bfff',fontSize:25,borderWidth:3,borderRadius:5,color:'black'}}>Name</Text>
+         <Text style={{backgroundColor:'#80bfff',fontSize:25,borderWidth:3,borderRadius:5,color:'black'}}>Email</Text>
+      </View>
+
+       <View style={{backgroundColor:'#cc99ff',flexDirection:'row',justifyContent:'space-between',padding:20}}>
+        <Button title="Submit"/>
+        <Button title="Edit"/>
+        <Button title="Cancel"/>
+       </View>
+
+      <Image style={{position:'fixed',bottom:0,left:0,width:100,height:100}} source={require('@expo/snack-static/react-native-logo.png')}/>
+      <Image style={{position:'fixed',bottom:0,right:0,width:100,height:100}} source={require('@expo/snack-static/react-native-logo.png')}/>
+       
+       
+   
+    </View>
+   );
+  }
+}

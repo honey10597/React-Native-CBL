@@ -1,0 +1,35 @@
+	import React,{componenet} from 'react';
+import { Text, View, StyleSheet,Image } from 'react-native';
+import Constants from 'expo-constants';
+
+
+
+export default class App extends React.Component {
+  render() {
+    return (
+           <View style={styles.container}>
+        <Text style={styles.textStyles}>
+            This is under Text Tag.
+        </Text>
+      </View>
+    );
+  }
+}
+
+     const styles=StyleSheet.create({
+       container:{
+       flex:1,
+       display:'flex',
+       backgroundColor:'yellow',
+       alignItems:'center',
+       justifyContent:'center'
+     },
+
+     textStyles:{
+       color:'red',
+       fontFamily:'arial',
+       padding:'10px',
+       fontSize:40
+     },
+     });
+

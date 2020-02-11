@@ -1,0 +1,75 @@
+
+import React,{Component} from 'react';
+import { Text, View, StyleSheet,TextInput,TouchableOpacity,Image,Linking} from 'react-native';
+import Constants from 'expo-constants';
+
+
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <View style={{top:27}}>
+        
+            <View style={{backgroundColor:'#0066ff'}}>
+               <Text style={{fontSize:30,color:'white',textAlign:'center',padding:10,fontWeight:'bold'}}>facebook</Text>
+            </View>
+            
+            <View style={{backgroundColor:'#ffffcc',flexDirection:'row',padding:5,justifyContent:'space-between'}}>
+              <Image
+          style={{width: 25, height: 25}}
+          source={require('/user.svg')}
+        />
+                <Text style={{color:'#004080'}}>Get Facebook for Android and browse faster</Text>
+            </View>
+            
+            <View style={{flexDirection:'column',padding:1,backgroundColor:'#e6e6e6'}}>
+                <TextInput style={{padding:5,borderColor:'grey',marginTop:10,borderWidth:1,borderTopLeftRadius:2,borderTopRightRadius:2,width:"80%",alignSelf:'center',backgroundColor:'white'}}
+                  placeholder='Mobile number or email address'
+                />
+
+                <TextInput style={{padding:5,borderColor:'grey',borderWidth:1,borderBottomLeftRadius:2,borderBottomRightRadius:2,width:"80%",alignSelf:'center',backgroundColor:'white'}}
+                  placeholder='Password'
+                  secureTextEntry="True"
+                />
+              <TouchableOpacity style={{width:'80%',marginTop:10,alignSelf:'center',marginBottom:10}}>
+                  <Text style={{fontSize:25,color:'white',backgroundColor:'#0066ff',borderRadius:5,textAlign:'center',height:40}}>Log In</Text>
+              </TouchableOpacity>
+              
+              <Text style={{color:'grey',alignSelf:'center'}}> ──────────  or  ──────────</Text>
+
+              <TouchableOpacity style={{width:'60%',marginTop:10,alignSelf:'center',marginBottom:10}}>
+                  <Text style={{fontSize:15,color:'white',backgroundColor:'#009900',padding:5,borderRadius:5,textAlign:'center'}} 
+                  
+                  >Create New Account</Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={{width:'60%',alignSelf:'center',marginBottom:10}}>
+                  <Text style={{color:'grey',alignSelf:'center'}}>Forgotten password?</Text>
+              </TouchableOpacity>    
+              
+        </View>
+        
+          <View style={{top:10}}>
+              <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+                  <Text style={{color:'grey'}}>English (UK)</Text>
+                  <Text style={{color:'grey'}}>ਪੰਜਾਬੀ</Text>
+              </View>
+              <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+                  <Text style={{color:'grey'}}>हिन्दी</Text>
+                  <Text style={{color:'grey'}}>اردو</Text>
+              </View>
+              <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+                  <Text style={{color:'grey'}}>Español</Text>
+                  <Text style={{color:'grey'}}>Português (Brasil)</Text>
+              </View>
+              <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+                  <Text style={{color:'grey'}}>Français (France)</Text>
+                  <Text style={{color:'grey'}}>[+]</Text>
+              </View>
+              <Text style={{color:'grey',alignSelf:'center'}}>Facebook Inc.</Text>
+          </View>
+      </View>
+    );
+  }
+}
+
